@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>ZOMOZ - Estudio Creativo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --color-principal: #0e0e0e;
+      --color-acento: #000;
+      --color-texto: #000;
+      --color-fondo: #fff;
+      --color-claro: #f5f5f5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--color-fondo);
+      color: var(--color-texto);
+      line-height: 1.5;
+    }
+    header,
+    footer {
+      background: var(--color-principal);
+      text-align: center;
+      padding: 1.5em;
+      color: var(--color-fondo);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: var(--color-fondo);
+      margin: 0 1em;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: var(--color-acento);
+    }
+
+    .hero {
+      background: var(--color-fondo);
+      color: var(--color-texto);
+      text-align: center;
+      padding: 4em 2em;
+      animation: fadeIn 2s ease-in;
+    }
+    .hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+    .hero p {
+      font-size: 1.2em;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 4em 2em;
+    }
+
+    h2 {
+      color: var(--color-acento);
+      margin-bottom: 1em;
+      font-size: 2em;
+    }
+    h3 {
+      color: var(--color-principal);
+      margin-bottom: 0.5em;
+    }
+
+    ul {
+      list-style: none;
+      margin-bottom: 2em;
+    }
+    ul li {
+      margin-bottom: 0.5em;
+    }
+
+    .anexo {
+      background: var(--color-claro);
+      color: var(--color-principal);
+      margin-bottom: 3em;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    .anexo:hover {
+      transform: translateY(-5px);
+    }
+
+    .anexo img {
+      width: 100%;
+      max-width: 500px;
+      display: block;
+      margin: 1em auto;
+      border-radius: 10px;
+      object-fit: cover;
+      height: 280px;
+    }
+
+    .anexo.zomoz img {
+      object-position: center 2%;
+    }
+
+    .enlaces a {
+      display: inline-block;
+      margin-right: 1em;
+      color: var(--color-acento);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .enlaces a:hover {
+      text-decoration: underline;
+    }
+
+    form input,
+    form textarea,
+    form button {
+      width: 100%;
+      margin-bottom: 1em;
+      padding: 0.8em;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+      color: var(--color-principal);
+      transition: border-color 0.3s;
+    }
+    form button {
+      background: var(--color-acento);
+      color: var(--color-fondo);
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    form button:hover {
+      background: #b02a38;
+      transform: scale(1.05);
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 8px;
+      opacity: 0;
+      animation: fadeInIframe 2s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    #whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      text-decoration: none;
+      transition: transform 0.3s, background 0.3s;
+    }
+    #whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #20b858;
+    }
+
+    footer {
+      font-size: 0.9em;
+      color: #aaa;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInIframe {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://github.com/FerProducer/Punto-cero-web/raw/main/Recurso%203.png" alt="Logo ZOMOZ" style="height: 60px;"/>
+    <h1>ZOMOZ</h1>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#registro">Registro</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#colectivo">Colectivo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Lleva tu proyecto a otro nivel</h2>
+    <p>Producción audiovisual, desarrollo web y marketing para artistas, marcas y emprendedores.</p>
+  </div>
+
+  <section id="servicios">
+    <h2>Soluciones creativas para destacar tu proyecto</h2>
+    <ul>
+      <li><strong>Producción Audiovisual:</strong> Grabación profesional de videos musicales, comerciales, eventos y más.</li>
+      <li><strong>Fotografía Profesional:</strong> Sesiones creativas para artistas, marcas y productos.</li>
+      <li><strong>Diseño Web:</strong> Sitios web funcionales, rápidos y optimizados para resultados.</li>
+      <li><strong>Branding & Marketing:</strong> Construcción de identidad visual, redes sociales y estrategias digitales.</li>
+    </ul>
+  </section>
+
+  <section id="registro">
+    <h2>Registro de Clientes</h2>
+    <p>Registra tu proyecto y cuéntanos qué necesitas. Nuestro equipo se pondrá en contacto contigo para darte una propuesta personalizada.</p>
+    <form id="registro-form">
+      <input type="text" name="entry.1051907336" placeholder="Nombre completo" required />
+      <input type="email" name="entry.74664589" placeholder="Correo electrónico" required />
+      <input type="tel" name="entry.434101613" placeholder="Número de teléfono (10 dígitos)" pattern="[0-9]{10}" required />
+      <input type="text" name="entry.1786270651" placeholder="Servicio requerido (Audiovisual / Fotografía / Web / Marketing)" required />
+      <input type="date" name="entry.192837465" required />
+      <input type="time" name="entry.1122334455" required placeholder="Hora de la sesión" />
+      <input type="number" name="entry.6677889900" min="1" max="8" required placeholder="Duración (horas)" />
+      <textarea name="entry.857049546" placeholder="Detalles adicionales o requerimientos" required rows="4"></textarea>
+      <button type="submit">Enviar Registro</button>
+    </form>
+  </section>
+
+  <section id="agenda">
+    <h2>Agenda tu cita con nosotros</h2>
+    <p>Aquí puedes revisar y reservar disponibilidad para grabaciones, sesiones o reuniones.</p>
+    <iframe src="https://calendar.google.com/calendar/embed?src=a7f353768237639f37bbf82ac27e3a6e1ab5ab44be324e73bc2cd4fba960aeb8%40group.calendar.google.com&ctz=America%2FChihuahua"></iframe>
+  </section>
+
+  <section id="colectivo">
+    <h2>Creamos alianzas para multiplicar tu impacto</h2>
+    <p>Somos un colectivo creativo multidisciplinario, unidos por la pasión por el arte, la tecnología y el emprendimiento. Trabajamos de la mano con aliados estratégicos para ofrecerte un servicio integral.</p>
+    <p><strong>Áreas aliadas:</strong></p>
+    <ul>
+      <li>Productoras musicales</li>
+      <li>Estudios de tatuaje</li>
+      <li>Diseñadores gráficos</li>
+      <li>Agencias de marketing</li>
+    </ul>
+  </section>
+
+  <section id="contacto">
+    <h2>Conecta con nosotros</h2>
+    <p>📍 Dirección: Chihuahua, México</p>
+    <p>📞 WhatsApp: <a href="https://wa.me/526391342577" target="_blank">+52 639 134 2577</a></p>
+    <p>📧 Email: <a href="mailto:luispeco4444@gmail.com">luispeco4444@gmail.com</a></p>
+  </section>
+
+    <footer>
+    <div>
+      <p>&copy; 2025 ZOMOZ · Todos los derechos reservados</p>
+      <p style="font-size: 0.8em; color: #666; margin-top: 0.5em;">
+        Diseño y programación por 
+        <a href="https://ferproducer.github.io/Zomoz/" target="_blank" style="color: #aaa; text-decoration: underline;">
+          ZOMOZ Estudio Creativo
+        </a>
+      </p>
+    </div>
+  </footer>
+
+
+  <a id="whatsapp-float" href="https://wa.me/526391342577" target="_blank" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white">
+      <path d="M20.52 3.48A11.936 11.936 0 0 0 12 0C5.37 0 .001 5.373.001 12c0 2.11.551 4.168 1.601 5.988L0 24l6.195-1.601A11.93 11.93 0 0 0 12 24c6.627 0 12-5.373 12-12 0-3.193-1.243-6.194-3.48-8.52zM12 22c-1.874 0-3.684-.5-5.273-1.445l-.376-.221-3.676.949.979-3.602-.245-.376A9.95 9.95 0 0 1 2 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10zm5.3-7.25c-.27-.135-1.597-.789-1.846-.879-.248-.09-.429-.135-.61.135-.18.27-.699.879-.858 1.059-.157.18-.314.202-.584.067-.27-.135-1.144-.422-2.18-1.344-.805-.715-1.347-1.597-1.505-1.867-.157-.27-.017-.416.12-.55.123-.123.27-.314.404-.472.135-.157.18-.27.27-.45.09-.18.045-.337-.023-.472-.067-.135-.61-1.47-.835-2.016-.22-.53-.445-.458-.61-.467-.157-.009-.337-.011-.517-.011-.18 0-.472.067-.72.337-.248.27-.945.923-.945 2.25s.968 2.615 1.102 2.796c.135.18 1.907 2.91 4.624 4.08.646.278 1.15.444 1.543.57.648.207 1.236.18 1.701.109.519-.078 1.597-.653 1.822-1.284.225-.63.225-1.17.157-1.285-.067-.113-.248-.18-.517-.314z"/>
+    </svg>
+  </a>
+
+  <script>
+    document.getElementById('registro-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+
+      fetch('https://script.google.com/macros/s/AKfycbxUCT55FdVNVnd2fDIjW1_kz3QblakqPTIuWr9Ldq2Q8Bg_XFbkbtWn7zMCh-W2MCVkgQ/exec', {
+        method: 'POST',
+        body: data,
+      })
+        .then(() => {
+          alert('✅ ¡Registro enviado correctamente!');
+          window.open(`https://wa.me/526391342577?text=¡Hola! Ya envié el formulario. Mi nombre es ${data.get('entry.1051907336')} y quiero agendar.`, '_blank');
+          form.reset();
+        })
+        .catch(() => {
+          alert('❌ Hubo un error al enviar el registro.');
+        });
+    });
+  </script>
+</body>
+</html>
